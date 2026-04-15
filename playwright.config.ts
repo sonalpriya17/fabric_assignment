@@ -33,6 +33,9 @@ export default defineConfig({
       name: 'api',
       use: {
         ...devices['Desktop Chrome'],
+        video: 'off',
+        screenshot: 'off',
+        trace: 'retain-on-failure',
       },
       grep: /@api/,
     },
