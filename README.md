@@ -1,5 +1,10 @@
 # ParaBank AI-Native Test Automation Framework
 
+[![Tests](https://img.shields.io/endpoint?url=https://sonalpriya17.github.io/fabric_assignment/badges/tests.json)](https://sonalpriya17.github.io/fabric_assignment/)
+[![ParaBank E2E](https://github.com/sonalpriya17/fabric_assignment/actions/workflows/e2e.yml/badge.svg)](https://github.com/sonalpriya17/fabric_assignment/actions/workflows/e2e.yml)
+
+**Live dashboard:** https://sonalpriya17.github.io/fabric_assignment/
+
 Scaffold generated with idiomatic TypeScript + Playwright + playwright-bdd architecture.
 
 ## Quick start
@@ -75,6 +80,16 @@ npm run send:report
 ```
 
 Leave the `SMTP_*` vars unset to print the markdown summary to stdout without sending mail.
+
+## Reports
+
+- **Dashboard (latest run + recent history):** https://sonalpriya17.github.io/fabric_assignment/
+- **Playwright HTML report (latest):** https://sonalpriya17.github.io/fabric_assignment/latest/playwright-report/
+- **AI session dashboard (latest):** https://sonalpriya17.github.io/fabric_assignment/latest/session-dashboard.html
+- **History JSON:** https://sonalpriya17.github.io/fabric_assignment/history.json
+- **Status badge (shields.io endpoint):** https://sonalpriya17.github.io/fabric_assignment/badges/tests.json
+
+The dashboard is published by the `deploy-pages` job after every successful `main` build. Failed builds do **not** overwrite the published dashboard, so the last-known-green report stays visible.
 
 **What the email contains**
 - Branch + short commit SHA.

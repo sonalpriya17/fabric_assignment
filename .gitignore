@@ -9,3 +9,5 @@ tests/_state/
 ai-audit/
 .features-gen/
 .DS_Store
+site/
+.pages-history/

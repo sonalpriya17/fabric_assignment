@@ -1,66 +1,8 @@
 /// <reference types="node" />
 
-import { appendFile, readFile } from 'node:fs/promises'
+import { appendFile } from 'node:fs/promises'
 import nodemailer from 'nodemailer'
-
-type PlaywrightLeaf = {
-  status?: string
-  expectedStatus?: string
-  retries?: number
-  attachments?: Array<{ path?: string; name?: string }>
-}
-
-type PlaywrightNode = {
-  title?: string
-  file?: string
-  suites?: PlaywrightNode[]
-  specs?: Array<{ title?: string; tests?: Array<{ results?: PlaywrightLeaf[] }> }>
-}
-
-type Totals = {
-  total: number
-  passed: number
-  failed: number
-  retries: number
-  flaky: number
-  failedAttachments: string[]
-}
-
-function flattenResults(root: PlaywrightNode): PlaywrightLeaf[] {
-  const out: PlaywrightLeaf[] = []
-
-  const walk = (node: PlaywrightNode): void => {
-    for (const suite of node.suites ?? []) walk(suite)
-    for (const spec of node.specs ?? []) {
-      for (const test of spec.tests ?? []) {
-        for (const result of test.results ?? []) out.push(result)
-      }
-    }
-  }
-
-  walk(root)
-  return out
-}
-
-function countFlaky(results: PlaywrightLeaf[]): number {
-  return results.filter((r) => r.status === 'flaky' || ((r.retries ?? 0) > 0 && r.status === 'passed')).length
-}
-
-function computeTotals(results: PlaywrightLeaf[]): Totals {
-  const total = results.length
-  const passed = results.filter((r) => r.status === 'passed').length
-  const failed = results.filter((r) => r.status === 'failed' || r.status === 'timedOut').length
-  const flaky = countFlaky(results)
-  const retries = results.reduce((acc, r) => acc + (r.retries ?? 0), 0)
-
-  const failedAttachments = results
-    .filter((r) => r.status === 'failed' || r.status === 'timedOut')
-    .flatMap((r) => r.attachments ?? [])
-    .map((a) => a.path || a.name)
-    .filter((v): v is string => Boolean(v))
-
-  return { total, passed, failed, retries, flaky, failedAttachments }
-}
+import { readTotals, type Totals } from './results-summary.js'
 
 function buildRunUrl(env: NodeJS.ProcessEnv): string | undefined {
   if (!env.GITHUB_SERVER_URL || !env.GITHUB_REPOSITORY || !env.GITHUB_RUN_ID) return undefined
@@ -120,10 +62,7 @@ function buildMarkdownSummary(totals: Totals, env: NodeJS.ProcessEnv): string {
 
 async function run(): Promise<void> {
   const env = process.env
-  const raw = await readFile('reports/playwright-results.json', 'utf8').catch(() => '{}')
-  const json = JSON.parse(raw) as PlaywrightNode
-  const results = flattenResults(json)
-  const totals = computeTotals(results)
+  const totals = await readTotals()
 
   const markdown = buildMarkdownSummary(totals, env)
 
