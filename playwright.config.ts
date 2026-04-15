@@ -16,9 +16,9 @@ export default defineConfig({
   timeout: 60_000,
   use: {
     baseURL: process.env.BASE_URL ?? 'https://parabank.parasoft.com/parabank/',
-    trace: 'retain-on-failure',
-    screenshot: 'only-on-failure',
-    video: 'retain-on-failure',
+    trace: 'on',
+    screenshot: 'on',
+    video: 'on',
     actionTimeout: 15_000,
   },
   projects: [
