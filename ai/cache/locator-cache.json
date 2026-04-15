@@ -1,0 +1,478 @@
+{
+  "first name input": {
+    "selector": "input[name=\"customer.firstName\"]",
+    "confidence": 0.4,
+    "generatedAt": "2026-04-15T00:00:00.000Z",
+    "lastValidated": "2026-04-15T08:48:00.764Z",
+    "successCount": 0,
+    "failCount": 0,
+    "healHistory": [
+      {
+        "healedAt": "2026-04-15T08:48:00.764Z",
+        "oldSelector": "input[name=\"customer.firstName\"]",
+        "newSelector": "input[name=\"customer.firstName\"]",
+        "triggerReason": "element_not_found"
+      }
+    ]
+  },
+  "last name input": {
+    "selector": "input[name=\"customer.lastName\"]",
+    "confidence": 0.95,
+    "generatedAt": "2026-04-15T00:00:00.000Z",
+    "lastValidated": "2026-04-15T00:00:00.000Z",
+    "successCount": 0,
+    "failCount": 0,
+    "healHistory": []
+  },
+  "address input": {
+    "selector": "input[name=\"customer.address.street\"]",
+    "confidence": 0.95,
+    "generatedAt": "2026-04-15T00:00:00.000Z",
+    "lastValidated": "2026-04-15T00:00:00.000Z",
+    "successCount": 0,
+    "failCount": 0,
+    "healHistory": []
+  },
+  "city input": {
+    "selector": "input[name=\"customer.address.city\"]",
+    "confidence": 0.95,
+    "generatedAt": "2026-04-15T00:00:00.000Z",
+    "lastValidated": "2026-04-15T00:00:00.000Z",
+    "successCount": 0,
+    "failCount": 0,
+    "healHistory": []
+  },
+  "state input": {
+    "selector": "input[name=\"customer.address.state\"]",
+    "confidence": 0.95,
+    "generatedAt": "2026-04-15T00:00:00.000Z",
+    "lastValidated": "2026-04-15T00:00:00.000Z",
+    "successCount": 0,
+    "failCount": 0,
+    "healHistory": []
+  },
+  "zip code input": {
+    "selector": "input[name=\"customer.address.zipCode\"]",
+    "confidence": 0.95,
+    "generatedAt": "2026-04-15T00:00:00.000Z",
+    "lastValidated": "2026-04-15T00:00:00.000Z",
+    "successCount": 0,
+    "failCount": 0,
+    "healHistory": []
+  },
+  "phone input": {
+    "selector": "input[name=\"customer.phoneNumber\"]",
+    "confidence": 0.95,
+    "generatedAt": "2026-04-15T00:00:00.000Z",
+    "lastValidated": "2026-04-15T00:00:00.000Z",
+    "successCount": 0,
+    "failCount": 0,
+    "healHistory": []
+  },
+  "ssn input": {
+    "selector": "input[name=\"customer.ssn\"]",
+    "confidence": 0.95,
+    "generatedAt": "2026-04-15T00:00:00.000Z",
+    "lastValidated": "2026-04-15T00:00:00.000Z",
+    "successCount": 0,
+    "failCount": 0,
+    "healHistory": []
+  },
+  "registration username input": {
+    "selector": "input[name=\"customer.username\"]",
+    "confidence": 0.95,
+    "generatedAt": "2026-04-15T00:00:00.000Z",
+    "lastValidated": "2026-04-15T00:00:00.000Z",
+    "successCount": 0,
+    "failCount": 0,
+    "healHistory": []
+  },
+  "registration password input": {
+    "selector": "input[name=\"customer.password\"]",
+    "confidence": 0.95,
+    "generatedAt": "2026-04-15T00:00:00.000Z",
+    "lastValidated": "2026-04-15T00:00:00.000Z",
+    "successCount": 0,
+    "failCount": 0,
+    "healHistory": []
+  },
+  "confirm password input": {
+    "selector": "input[name=\"repeatedPassword\"]",
+    "confidence": 0.95,
+    "generatedAt": "2026-04-15T00:00:00.000Z",
+    "lastValidated": "2026-04-15T00:00:00.000Z",
+    "successCount": 0,
+    "failCount": 0,
+    "healHistory": []
+  },
+  "register submit button": {
+    "selector": "input[value=\"Register\"]",
+    "confidence": 0.95,
+    "generatedAt": "2026-04-15T00:00:00.000Z",
+    "lastValidated": "2026-04-15T00:00:00.000Z",
+    "successCount": 0,
+    "failCount": 0,
+    "healHistory": []
+  },
+  "welcome message": {
+    "selector": "#rightPanel h1.title",
+    "confidence": 0.9,
+    "generatedAt": "2026-04-15T00:00:00.000Z",
+    "lastValidated": "2026-04-15T00:00:00.000Z",
+    "successCount": 0,
+    "failCount": 0,
+    "healHistory": []
+  },
+  "username input": {
+    "selector": "input[name=\"username\"]",
+    "confidence": 0.95,
+    "generatedAt": "2026-04-15T00:00:00.000Z",
+    "lastValidated": "2026-04-15T00:00:00.000Z",
+    "successCount": 0,
+    "failCount": 0,
+    "healHistory": []
+  },
+  "password input": {
+    "selector": "input[name=\"password\"]",
+    "confidence": 0.95,
+    "generatedAt": "2026-04-15T00:00:00.000Z",
+    "lastValidated": "2026-04-15T00:00:00.000Z",
+    "successCount": 0,
+    "failCount": 0,
+    "healHistory": []
+  },
+  "login button": {
+    "selector": "input[value=\"Log In\"]",
+    "confidence": 0.95,
+    "generatedAt": "2026-04-15T00:00:00.000Z",
+    "lastValidated": "2026-04-15T00:00:00.000Z",
+    "successCount": 0,
+    "failCount": 0,
+    "healHistory": []
+  },
+  "account type dropdown": {
+    "selector": "select#type",
+    "confidence": 0.4,
+    "generatedAt": "2026-04-15T00:00:00.000Z",
+    "lastValidated": "2026-04-15T09:09:56.585Z",
+    "successCount": 0,
+    "failCount": 0,
+    "healHistory": [
+      {
+        "healedAt": "2026-04-15T09:09:56.585Z",
+        "oldSelector": "select#type",
+        "newSelector": "select#type",
+        "triggerReason": "element_not_found"
+      }
+    ]
+  },
+  "open new account button": {
+    "selector": "input[value=\"Open New Account\"]",
+    "confidence": 0.95,
+    "generatedAt": "2026-04-15T00:00:00.000Z",
+    "lastValidated": "2026-04-15T00:00:00.000Z",
+    "successCount": 0,
+    "failCount": 0,
+    "healHistory": []
+  },
+  "new account number link": {
+    "selector": "#newAccountId",
+    "confidence": 0.95,
+    "generatedAt": "2026-04-15T00:00:00.000Z",
+    "lastValidated": "2026-04-15T00:00:00.000Z",
+    "successCount": 0,
+    "failCount": 0,
+    "healHistory": []
+  },
+  "account opened message": {
+    "selector": "#openAccountResult h1.title",
+    "confidence": 0.9,
+    "generatedAt": "2026-04-15T00:00:00.000Z",
+    "lastValidated": "2026-04-15T00:00:00.000Z",
+    "successCount": 0,
+    "failCount": 0,
+    "healHistory": []
+  },
+  "transfer amount input": {
+    "selector": "input#amount",
+    "confidence": 0.4,
+    "generatedAt": "2026-04-15T00:00:00.000Z",
+    "lastValidated": "2026-04-15T09:10:06.223Z",
+    "successCount": 0,
+    "failCount": 0,
+    "healHistory": [
+      {
+        "healedAt": "2026-04-15T08:48:17.296Z",
+        "oldSelector": "input#amount",
+        "newSelector": "input#amount",
+        "triggerReason": "element_not_found"
+      },
+      {
+        "healedAt": "2026-04-15T08:50:30.065Z",
+        "oldSelector": "input#amount",
+        "newSelector": "input#amount",
+        "triggerReason": "element_not_found"
+      },
+      {
+        "healedAt": "2026-04-15T09:10:06.223Z",
+        "oldSelector": "input#amount",
+        "newSelector": "input#amount",
+        "triggerReason": "element_not_found"
+      }
+    ]
+  },
+  "transfer from account dropdown": {
+    "selector": "select#fromAccountId",
+    "confidence": 0.95,
+    "generatedAt": "2026-04-15T00:00:00.000Z",
+    "lastValidated": "2026-04-15T00:00:00.000Z",
+    "successCount": 0,
+    "failCount": 0,
+    "healHistory": []
+  },
+  "transfer to account dropdown": {
+    "selector": "select#toAccountId",
+    "confidence": 0.95,
+    "generatedAt": "2026-04-15T00:00:00.000Z",
+    "lastValidated": "2026-04-15T00:00:00.000Z",
+    "successCount": 0,
+    "failCount": 0,
+    "healHistory": []
+  },
+  "transfer submit button": {
+    "selector": "input[value=\"Transfer\"]",
+    "confidence": 0.95,
+    "generatedAt": "2026-04-15T00:00:00.000Z",
+    "lastValidated": "2026-04-15T00:00:00.000Z",
+    "successCount": 0,
+    "failCount": 0,
+    "healHistory": []
+  },
+  "transfer confirmation message": {
+    "selector": "#showResult h1.title",
+    "confidence": 0.4,
+    "generatedAt": "2026-04-15T00:00:00.000Z",
+    "lastValidated": "2026-04-15T09:13:16.763Z",
+    "successCount": 0,
+    "failCount": 0,
+    "healHistory": [
+      {
+        "healedAt": "2026-04-15T09:13:16.763Z",
+        "oldSelector": "#showResult h1.title",
+        "newSelector": "#showResult h1.title",
+        "triggerReason": "element_not_found"
+      }
+    ]
+  },
+  "payee name input": {
+    "selector": "input[name=\"payee.name\"]",
+    "confidence": 0.4,
+    "generatedAt": "2026-04-15T00:00:00.000Z",
+    "lastValidated": "2026-04-15T08:50:20.974Z",
+    "successCount": 0,
+    "failCount": 0,
+    "healHistory": [
+      {
+        "healedAt": "2026-04-15T08:47:55.891Z",
+        "oldSelector": "input[name=\"payee.name\"]",
+        "newSelector": "input[name=\"payee.name\"]",
+        "triggerReason": "element_not_found"
+      },
+      {
+        "healedAt": "2026-04-15T08:50:20.974Z",
+        "oldSelector": "input[name=\"payee.name\"]",
+        "newSelector": "input[name=\"payee.name\"]",
+        "triggerReason": "element_not_found"
+      }
+    ]
+  },
+  "bill address input": {
+    "selector": "input[name=\"payee.address.street\"]",
+    "confidence": 0.95,
+    "generatedAt": "2026-04-15T00:00:00.000Z",
+    "lastValidated": "2026-04-15T00:00:00.000Z",
+    "successCount": 0,
+    "failCount": 0,
+    "healHistory": []
+  },
+  "bill city input": {
+    "selector": "input[name=\"payee.address.city\"]",
+    "confidence": 0.95,
+    "generatedAt": "2026-04-15T00:00:00.000Z",
+    "lastValidated": "2026-04-15T00:00:00.000Z",
+    "successCount": 0,
+    "failCount": 0,
+    "healHistory": []
+  },
+  "bill state input": {
+    "selector": "input[name=\"payee.address.state\"]",
+    "confidence": 0.95,
+    "generatedAt": "2026-04-15T00:00:00.000Z",
+    "lastValidated": "2026-04-15T00:00:00.000Z",
+    "successCount": 0,
+    "failCount": 0,
+    "healHistory": []
+  },
+  "bill zip input": {
+    "selector": "input[name=\"payee.address.zipCode\"]",
+    "confidence": 0.95,
+    "generatedAt": "2026-04-15T00:00:00.000Z",
+    "lastValidated": "2026-04-15T00:00:00.000Z",
+    "successCount": 0,
+    "failCount": 0,
+    "healHistory": []
+  },
+  "bill phone input": {
+    "selector": "input[name=\"payee.phoneNumber\"]",
+    "confidence": 0.95,
+    "generatedAt": "2026-04-15T00:00:00.000Z",
+    "lastValidated": "2026-04-15T00:00:00.000Z",
+    "successCount": 0,
+    "failCount": 0,
+    "healHistory": []
+  },
+  "bill account input": {
+    "selector": "input[name=\"payee.accountNumber\"]",
+    "confidence": 0.95,
+    "generatedAt": "2026-04-15T00:00:00.000Z",
+    "lastValidated": "2026-04-15T00:00:00.000Z",
+    "successCount": 0,
+    "failCount": 0,
+    "healHistory": []
+  },
+  "bill verify account input": {
+    "selector": "input[name=\"verifyAccount\"]",
+    "confidence": 0.95,
+    "generatedAt": "2026-04-15T00:00:00.000Z",
+    "lastValidated": "2026-04-15T00:00:00.000Z",
+    "successCount": 0,
+    "failCount": 0,
+    "healHistory": []
+  },
+  "bill amount input": {
+    "selector": "input[name=\"amount\"]",
+    "confidence": 0.95,
+    "generatedAt": "2026-04-15T00:00:00.000Z",
+    "lastValidated": "2026-04-15T00:00:00.000Z",
+    "successCount": 0,
+    "failCount": 0,
+    "healHistory": []
+  },
+  "bill pay from account dropdown": {
+    "selector": "select[name=\"fromAccountId\"]",
+    "confidence": 0.95,
+    "generatedAt": "2026-04-15T00:00:00.000Z",
+    "lastValidated": "2026-04-15T00:00:00.000Z",
+    "successCount": 0,
+    "failCount": 0,
+    "healHistory": []
+  },
+  "send payment button": {
+    "selector": "input[value=\"Send Payment\"]",
+    "confidence": 0.95,
+    "generatedAt": "2026-04-15T00:00:00.000Z",
+    "lastValidated": "2026-04-15T00:00:00.000Z",
+    "successCount": 0,
+    "failCount": 0,
+    "healHistory": []
+  },
+  "bill payment complete message": {
+    "selector": "#billpayResult h1.title",
+    "confidence": 0.9,
+    "generatedAt": "2026-04-15T00:00:00.000Z",
+    "lastValidated": "2026-04-15T00:00:00.000Z",
+    "successCount": 0,
+    "failCount": 0,
+    "healHistory": []
+  },
+  "bill payment amount value": {
+    "selector": "#billpayResult #amount",
+    "confidence": 0.85,
+    "generatedAt": "2026-04-15T00:00:00.000Z",
+    "lastValidated": "2026-04-15T00:00:00.000Z",
+    "successCount": 0,
+    "failCount": 0,
+    "healHistory": []
+  },
+  "accounts overview title": {
+    "selector": "#rightPanel h1.title:has-text(\"Accounts Overview\")",
+    "confidence": 0.9,
+    "generatedAt": "2026-04-15T00:00:00.000Z",
+    "lastValidated": "2026-04-15T00:00:00.000Z",
+    "successCount": 0,
+    "failCount": 0,
+    "healHistory": []
+  },
+  "open new account link": {
+    "selector": "#leftPanel a[href*=\"openaccount.htm\"]",
+    "confidence": 0.9,
+    "generatedAt": "2026-04-15T00:00:00.000Z",
+    "lastValidated": "2026-04-15T00:00:00.000Z",
+    "successCount": 0,
+    "failCount": 0,
+    "healHistory": []
+  },
+  "accounts overview link": {
+    "selector": "#leftPanel a[href*=\"overview.htm\"]",
+    "confidence": 0.9,
+    "generatedAt": "2026-04-15T00:00:00.000Z",
+    "lastValidated": "2026-04-15T00:00:00.000Z",
+    "successCount": 0,
+    "failCount": 0,
+    "healHistory": []
+  },
+  "transfer funds link": {
+    "selector": "#leftPanel a[href*=\"transfer.htm\"]",
+    "confidence": 0.9,
+    "generatedAt": "2026-04-15T00:00:00.000Z",
+    "lastValidated": "2026-04-15T00:00:00.000Z",
+    "successCount": 0,
+    "failCount": 0,
+    "healHistory": []
+  },
+  "bill pay link": {
+    "selector": "#leftPanel a[href*=\"billpay.htm\"]",
+    "confidence": 0.9,
+    "generatedAt": "2026-04-15T00:00:00.000Z",
+    "lastValidated": "2026-04-15T00:00:00.000Z",
+    "successCount": 0,
+    "failCount": 0,
+    "healHistory": []
+  },
+  "find transactions link": {
+    "selector": "#leftPanel a[href*=\"findtrans.htm\"]",
+    "confidence": 0.9,
+    "generatedAt": "2026-04-15T00:00:00.000Z",
+    "lastValidated": "2026-04-15T00:00:00.000Z",
+    "successCount": 0,
+    "failCount": 0,
+    "healHistory": []
+  },
+  "update contact info link": {
+    "selector": "#leftPanel a[href*=\"updateprofile.htm\"]",
+    "confidence": 0.9,
+    "generatedAt": "2026-04-15T00:00:00.000Z",
+    "lastValidated": "2026-04-15T00:00:00.000Z",
+    "successCount": 0,
+    "failCount": 0,
+    "healHistory": []
+  },
+  "request loan link": {
+    "selector": "#leftPanel a[href*=\"requestloan.htm\"]",
+    "confidence": 0.9,
+    "generatedAt": "2026-04-15T00:00:00.000Z",
+    "lastValidated": "2026-04-15T00:00:00.000Z",
+    "successCount": 0,
+    "failCount": 0,
+    "healHistory": []
+  },
+  "log out link": {
+    "selector": "a[href*=\"logout.htm\"]",
+    "confidence": 0.9,
+    "generatedAt": "2026-04-15T00:00:00.000Z",
+    "lastValidated": "2026-04-15T00:00:00.000Z",
+    "successCount": 0,
+    "failCount": 0,
+    "healHistory": []
+  }
+}

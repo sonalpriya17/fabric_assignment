@@ -1,0 +1,8 @@
+{
+  "templates": [
+    {
+      "persona": "standard_user",
+      "fields": ["firstName", "lastName", "username", "password"]
+    }
+  ]
+}

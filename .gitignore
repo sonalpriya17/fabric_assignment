@@ -1,0 +1,11 @@
+node_modules
+dist
+playwright-report
+test-results
+prompts/.prompt-hashes.json
+.env
+reports/
+tests/_state/
+ai-audit/
+.features-gen/
+.DS_Store

@@ -1,0 +1,13 @@
+{
+  "fields": [
+    "payeeName",
+    "address",
+    "city",
+    "state",
+    "zipCode",
+    "phone",
+    "account",
+    "verifyAccount",
+    "amount"
+  ]
+}
