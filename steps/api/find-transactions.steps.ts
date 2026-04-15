@@ -5,10 +5,7 @@ import { readStateFile } from '../../utils/state-file.js'
 
 const { Given, When, Then } = createBdd(test)
 
-async function seedStateViaApi(request: any, baseUrl: string): Promise<{ accountNumber: string; amount: string }> {
-  const username = process.env.PARABANK_USER ?? 'john'
-  const password = process.env.PARABANK_PASSWORD ?? 'demo'
-
+async function loginViaRequest(request: any, baseUrl: string, username: string, password: string): Promise<void> {
   await request.get(`${baseUrl}/index.htm`)
   const loginRes = await request.post(`${baseUrl}/login.htm`, {
     form: { username, password },
@@ -17,7 +14,9 @@ async function seedStateViaApi(request: any, baseUrl: string): Promise<{ account
   if (!loginRes.ok() && loginRes.status() !== 302) {
     throw new Error(`ParaBank login failed: ${loginRes.status()}`)
   }
+}
 
+async function seedStateViaApi(request: any, baseUrl: string): Promise<{ accountNumber: string; amount: string }> {
   const overview = await request.get(`${baseUrl}/overview.htm`)
   const body = await overview.text()
   const customerIdMatch = body.match(/customers\/"\s*\+\s*(\d+)/)
@@ -43,12 +42,16 @@ async function seedStateViaApi(request: any, baseUrl: string): Promise<{ account
 Given('transaction search context exists from UI bill payment', async ({ world, request }: any) => {
   const baseUrl = (process.env.BASE_URL ?? 'https://parabank.parasoft.com/parabank/').replace(/\/$/, '')
 
-  let state: { accountNumber: string; amount: string }
+  let state: { accountNumber: string; amount: string; username?: string; password?: string }
   try {
-    state = await readStateFile<{ accountNumber: string; amount: string }>('PROMPT-ASSIGNMENT-UI-001')
+    state = await readStateFile<{ accountNumber: string; amount: string; username?: string; password?: string }>('PROMPT-ASSIGNMENT-UI-001')
+    const user = state.username ?? process.env.PARABANK_USER ?? 'john'
+    const pass = state.password ?? process.env.PARABANK_PASSWORD ?? 'demo'
+    await loginViaRequest(request, baseUrl, user, pass)
   } catch (error: any) {
     if (error?.code !== 'ENOENT') throw error
     console.log('[find-transactions] UI state file missing — seeding via API with john/demo')
+    await loginViaRequest(request, baseUrl, process.env.PARABANK_USER ?? 'john', process.env.PARABANK_PASSWORD ?? 'demo')
     state = await seedStateViaApi(request, baseUrl)
   }
   world.set('assignmentState', state)

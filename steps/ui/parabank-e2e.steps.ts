@@ -75,6 +75,7 @@ When('the user pays a bill using the created account', async ({ billPaymentPage,
 Then('bill payment should be successful and state is stored for API validation', async ({ billPaymentPage, world }: any) => {
   const accountNumber = world.get('createdAccountNumber') as string
   const amount = world.get('billPaymentAmount') as string
+  const user = world.get('registeredUser') as { username: string; password: string }
 
   await billPaymentPage.expectBillPaymentComplete()
   await billPaymentPage.expectPaymentSummaryIncludes(amount)
@@ -82,6 +83,8 @@ Then('bill payment should be successful and state is stored for API validation',
   await writeStateFile('PROMPT-ASSIGNMENT-UI-001', {
     accountNumber,
     amount,
+    username: user.username,
+    password: user.password,
     ts: new Date().toISOString(),
   })
 })
