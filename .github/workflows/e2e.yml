@@ -30,6 +30,9 @@ jobs:
       - name: Generate tests
         run: npm run generate:tests
 
+      - name: Generate BDD specs
+        run: npx bddgen
+
       - name: Run tests
         id: tests
         continue-on-error: true
