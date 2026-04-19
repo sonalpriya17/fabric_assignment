@@ -27,11 +27,14 @@ jobs:
           token: ${{ secrets.E2E_TRIGGER_PAT }}
           repository: sonalpriya17/parabank-playwright
           event-type: upstream-push
+          # target_branch: which branch of parabank-playwright to run tests from.
+          # Override to a feature branch during active refactors; leave as main for normal use.
           client-payload: |
             {
-              "source_repo": "${{ github.repository }}",
-              "sha":         "${{ github.event.pull_request.head.sha || github.sha }}",
-              "ref":         "${{ github.event.pull_request.head.ref || github.ref_name }}",
-              "event":       "${{ github.event_name }}",
-              "actor":       "${{ github.actor }}"
+              "source_repo":   "${{ github.repository }}",
+              "sha":           "${{ github.event.pull_request.head.sha || github.sha }}",
+              "ref":           "${{ github.event.pull_request.head.ref || github.ref_name }}",
+              "event":         "${{ github.event_name }}",
+              "actor":         "${{ github.actor }}",
+              "target_branch": "refactor/ci-extract-scripts"
             }
