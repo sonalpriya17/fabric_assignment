@@ -1,7 +1,7 @@
-# Triggers the parabank-playwright E2E suite on every push and every
-# pull-request commit in fabric_assignment. The receiving workflow posts
-# a commit status named "parabank-e2e" back onto this repo's SHA, which
-# shows up as a check on the PR (and can be set as a required check in
+# Triggers the parabank-playwright E2E suite on every pull-request
+# commit in fabric_assignment. The receiving workflow posts a commit
+# status named "parabank-e2e" back onto this repo's SHA, which shows
+# up as a check on the PR (and can be set as a required check in
 # branch protection).
 #
 # Required secret in fabric_assignment:
@@ -15,8 +15,6 @@
 name: Trigger ParaBank E2E
 
 on:
-  push:
-    branches-ignore: []
   pull_request:
     types: [opened, synchronize, reopened]
 
