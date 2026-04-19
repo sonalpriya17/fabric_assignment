@@ -1,37 +1,43 @@
-# Triggers the parabank-playwright E2E suite on every push and every
-# pull-request commit in fabric_assignment. The receiving workflow posts
-# a commit status named "parabank-e2e" back onto this repo's SHA, which
-# shows up as a check on the PR (and can be set as a required check in
+# Triggers the parabank-playwright E2E suite on every pull-request
+# commit in fabric_assignment. The receiving workflow posts a commit
+# status named "parabank-e2e" back onto this repo's SHA, which shows
+# up as a check on the PR (and can be set as a required check in
 # branch protection).
 #
 # Required secret in fabric_assignment:
-#   E2E_TRIGGER_PAT — a fine-grained PAT with write access to
-#   sonalpriya17/parabank-playwright → Actions. GITHUB_TOKEN can't
-#   cross repos, which is why a PAT is needed here.
+#   E2E_TRIGGER_PAT — a fine-grained PAT with Actions: Read and write
+#   on sonalpriya17/parabank-playwright. GITHUB_TOKEN can't cross repos.
+#
+# Uses workflow_dispatch (not repository_dispatch) so the receiver can
+# run against a non-default branch. Set TARGET_REF below to pick the
+# parabank-playwright branch that should execute the suite.
 
 name: Trigger ParaBank E2E
 
 on:
-  push:
-    branches-ignore: []
   pull_request:
     types: [opened, synchronize, reopened]
+
+env:
+  # The parabank-playwright branch to run tests from. Change to `main`
+  # once the refactor lands; leave as feature branch during active dev.
+  TARGET_REF: refactor/ci-extract-scripts
 
 jobs:
   dispatch:
     runs-on: ubuntu-latest
     steps:
-      - name: Dispatch to parabank-playwright
-        uses: peter-evans/repository-dispatch@v3
+      - name: Trigger parabank-playwright E2E
+        uses: benc-uk/workflow-dispatch@v1
         with:
           token: ${{ secrets.E2E_TRIGGER_PAT }}
-          repository: sonalpriya17/parabank-playwright
-          event-type: upstream-push
-          client-payload: |
+          repo: sonalpriya17/parabank-playwright
+          workflow: Playwright E2E Tests
+          ref: ${{ env.TARGET_REF }}
+          inputs: |
             {
               "source_repo": "${{ github.repository }}",
               "sha":         "${{ github.event.pull_request.head.sha || github.sha }}",
               "ref":         "${{ github.event.pull_request.head.ref || github.ref_name }}",
-              "event":       "${{ github.event_name }}",
-              "actor":       "${{ github.actor }}"
+              "reason":      "fabric ${{ github.event_name }}"
             }
