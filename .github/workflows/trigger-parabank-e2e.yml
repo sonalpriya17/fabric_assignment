@@ -1,0 +1,37 @@
+# Triggers the parabank-playwright E2E suite on every push and every
+# pull-request commit in fabric_assignment. The receiving workflow posts
+# a commit status named "parabank-e2e" back onto this repo's SHA, which
+# shows up as a check on the PR (and can be set as a required check in
+# branch protection).
+#
+# Required secret in fabric_assignment:
+#   E2E_TRIGGER_PAT — a fine-grained PAT with write access to
+#   sonalpriya17/parabank-playwright → Actions. GITHUB_TOKEN can't
+#   cross repos, which is why a PAT is needed here.
+
+name: Trigger ParaBank E2E
+
+on:
+  push:
+    branches-ignore: []
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch to parabank-playwright
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.E2E_TRIGGER_PAT }}
+          repository: sonalpriya17/parabank-playwright
+          event-type: upstream-push
+          client-payload: |
+            {
+              "source_repo": "${{ github.repository }}",
+              "sha":         "${{ github.event.pull_request.head.sha || github.sha }}",
+              "ref":         "${{ github.event.pull_request.head.ref || github.ref_name }}",
+              "event":       "${{ github.event_name }}",
+              "actor":       "${{ github.actor }}"
+            }
